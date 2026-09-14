@@ -1,0 +1,89 @@
+/* ==========================
+   Layout
+========================== */
+
+.page-container {
+    width: min(1280px, 100%);
+    margin-inline: auto;
+    padding-inline: 4rem;
+}
+
+@media (max-width: 768px) {
+    .page-container {
+        padding-inline: 1.5rem;
+    }
+}
+
+.section{
+    padding-block:8rem;
+}
+
+.hero {
+    padding-top: 3rem;
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+.button{
+    padding:1rem 2rem;
+    border-radius:16px;
+    border:1px solid var(--border);
+    background:transparent;
+    transition:.3s;
+}
+
+.button:hover{
+    transform:translateY(-2px);
+}
+
+/* ==========================
+   Navigation
+========================== */
+
+.logo{
+    font-family:var(--font-heading);
+    font-style:italic;
+    font-size:2.5rem;
+    font-weight:400;
+    letter-spacing:-.03em;
+    color:var(--primary);
+}
+
+.nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text);
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+.navbar {
+    background: rgba(248, 244, 239, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid rgba(232, 221, 210, 0.35);
+
+    transition: all .3s ease;
+}
+
+/* ==========================
+   Mobile Menu
+========================== */
+
+.mobile-menu{
+    position:absolute;
+    top:100%;
+
+    left:0;
+    right:0;
+
+    background:rgba(248,244,239,.96);
+    backdrop-filter:blur(18px);
+    padding:2rem;
+}

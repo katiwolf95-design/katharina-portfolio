@@ -1,0 +1,92 @@
+:root {
+  --hero-kicker: clamp(0.6rem, 0.7rem + 0.3vw, 0.8rem);
+  --hero-greeting: clamp(3rem, 7vw, 6rem);
+  --hero-title: clamp(1.6rem, 2vw, 1.9rem);
+  --hero-subtitle: clamp(1.3rem, 1.8vw, 1.6rem);
+
+  --section-title: clamp(2.5rem, 4.5vw, 5rem);
+
+  --project-quote: clamp(1rem, 1.4vw, 1.2rem);
+  --project-tags: clamp(.95rem, 1vw, 1.05rem);
+
+  --body: clamp(1rem, 1.2vw, 1.15rem);
+  --small: 0.9rem;
+
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* Hero */
+
+.hero-kicker {
+    font-family: var(--font-body);
+    font-size: var(--hero-kicker);
+    letter-spacing: 0.35em;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: var(--hero-title);
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.hero-greeting {
+    font-family: var(--font-heading);
+    font-size: var(--hero-greeting);
+    font-weight: 500;
+    line-height: 1;
+}
+
+
+
+.hero-name {
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.hero-subtitle {
+    font-family: var(--font-heading);
+    font-size: var(--hero-subtitle);
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+.hero-description {
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--text-light);
+}
+
+.section-title {
+  font-family: var(--font-body);
+  font-size: var(--section-title);
+  line-height: 1;
+  font-weight: 600;
+}
+
+.body-text {
+  font-family: var(--font-body);
+  font-size: var(--body);
+  line-height: 1.8;
+}
+
+.small-text {
+  font-family: var(--font-body);
+  font-size: var(--small);
+}
+
+.playfair {
+    font-family: var(--font-heading);
+}
+
+.inter {
+    font-family: var(--font-body);
+}
