@@ -54,7 +54,7 @@ export default function About() {
                     Was ich heute verbinde
                 </p>
 
-                <h2 className="section-title mb-16 text-(--text-primary)">
+                <h2 className="mb-16 text-4xl md:text-6xl font-(--font-heading) leading-tight text-(--text-primary)">
                     Vier Perspektiven, die heute zusammenkommen.
                 </h2>
             </div>
