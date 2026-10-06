@@ -4,7 +4,7 @@ import portfolio from "../../assets/images//case-studies/digital-home/digital-ho
 
 export default function DigitalHome() {
     const projectIndex = projects.findIndex(
-        (item) => item.slug === "freelancer-crm"
+        (item) => item.slug === "digital-home"
     );
 
     const previousProject =
