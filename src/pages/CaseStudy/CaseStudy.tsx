@@ -25,12 +25,12 @@ export default function CaseStudy({ slug }: CaseStudyProps) {
     return <SolineaCRM />;
   }
 
+   if (slug === "digital-home") {
+    return <DigitalHome />;
+  }
+  
   if (slug === "randolph") {
     return <Randolph />;
-  }
-
-  if (slug === "digital-home") {
-    return <DigitalHome />;
   }
 
   const previousProject =
