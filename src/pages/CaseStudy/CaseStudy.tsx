@@ -1,4 +1,7 @@
-import { projects } from "../data/projects";
+import { projects } from "../../data/projects";
+import DigitalHome from "./DigitalHome";
+import Randolph from "./Randolph";
+import SolineaCRM from "./SolineaCRM";
 
 type CaseStudyProps = {
   slug: string;
@@ -16,6 +19,18 @@ export default function CaseStudy({ slug }: CaseStudyProps) {
         </div>
       </main>
     );
+  }
+
+  if (slug === "freelancer-crm") {
+    return <SolineaCRM />;
+  }
+
+  if (slug === "randolph") {
+    return <Randolph />;
+  }
+
+  if (slug === "digital-home") {
+    return <DigitalHome />;
   }
 
   const previousProject =
@@ -147,7 +162,7 @@ export default function CaseStudy({ slug }: CaseStudyProps) {
                     Selected Work
                 </p>
 
-                <div className="min-h-[400px] rouded-[2rem] bg-(--surface) p-8 md:p-16">
+                <div className="min-h-100 rounded-4xl bg-(--surface) p-8 md:p-16">
 
                     <p className="body-text text-center text-(--text-light)">
                         Projektvisuals werden hier später ergänzt.
@@ -212,7 +227,7 @@ export default function CaseStudy({ slug }: CaseStudyProps) {
             <div className="mx-auto flex w-full max-w-300 flex-col gap-8 px-6 py-16 md:px-15 md:py-24">
 
                 <a
-                    href={` /projects/${previousProject.slug}`}
+                    href={`/projects/${previousProject.slug}`}
                     className="text-(--text-light) transition-opacity hover:opacity-60"
                 >
                     ← {previousProject.title}

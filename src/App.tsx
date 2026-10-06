@@ -5,7 +5,7 @@ import Projects from "./components/sections/Projects/Projects";
 import AboutSection from "./components/sections/About/About";
 import Postcard from "./components/sections/Contact/Postcard";
 import Footer from "./components/layout/Footer";
-import CaseStudy from "./pages/CaseStudy";
+import CaseStudy from "./pages/CaseStudy/CaseStudy";
 import About from "./pages/About";
 
 import "./styles/globals.css";
