@@ -11,7 +11,7 @@ export default function Hero() {
         <Container>            
             <div className="
                 grid grid-cols-1 md:grid-cols-[1fr_0.9fr] lg:grid-cols-[0.9fr_1.1fr]
-                items-center gap-10 lg:gap-12 py-16 xl:py-20
+                items-center gap-10 lg:gap-12 py-8 md:py-16 xl:py-20
             ">
                 <HeroContent />
                 <HeroImage />

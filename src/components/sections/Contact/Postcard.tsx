@@ -3,12 +3,15 @@ import Stamp from "./Stamp";
 import Blob from "../../../assets/images/blob-image.png"
 import { useEffect, useRef, useState } from "react";
 import SecretNote from "./SecretNote";
-import { AnimatePresence } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 
 export default function Postcard() {
 
     const [showSecret, setShowSecret] = useState(false);
+    const [stampHint, setStampHint] = useState(false);
+
     const noteRef = useRef<HTMLDivElement>(null);
+    const postcardRef = useRef<HTMLElement>(null);
 
     useEffect(() => {
         if (!showSecret) return;
@@ -32,8 +35,32 @@ export default function Postcard() {
         };
     }, [showSecret]);
 
+    useEffect(() => {
+        const postcard = postcardRef.current;
+
+        if (!postcard) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setStampHint(true);
+                    observer.disconnect();
+                }
+            },
+            {
+                threshold: 0.3,
+            }
+        );
+
+        observer.observe(postcard);
+
+        return () => observer.disconnect();
+        
+    }, []);
+
     return (
         <article 
+            ref={postcardRef}
             id="contact"
             className="
                 relative mx-auto mb-32 flex
@@ -56,7 +83,7 @@ export default function Postcard() {
                     src={Blob}
                     alt="Coffe-Image"
                     className="
-                        w-[280px] -translate-x-12 translate-y-6 
+                        w-[230px] -translate-x-12 translate-y-6 
                         md:w-[340px] md:translate-x-0 md:translate-y-0 mb-8
                     "
                 />
@@ -74,7 +101,7 @@ export default function Postcard() {
             {/* Nachricht */}
             <div className="
                 relative flex
-                ml-16 md:ml-12
+                ml-10 md:ml-12
                 mt-7 md:mt-0
                 w-full md:w-[300px]
                 h-auto md:h-[360px]
@@ -82,16 +109,25 @@ export default function Postcard() {
             ">
 
                 {/* Briefmarke */}
-                <div className="
-                    absolute
-                    -top-88 right-0
-                    md:-top-22 md:-right-32
-                ">
+                <motion.div
+                    animate={
+                        stampHint
+                            ?{ rotate: [-3, 3, -2, 2, 0, 0, 0, -3, 3, -2, 2, 0], }
+                            : { rotate: 0 }
+                    }
+                    transition={{ duration: 1.5, ease: "easeInOut",}}
+                    onAnimationComplete={() => setStampHint(false)}
+                    className="
+                        absolute
+                        -top-85 -right-6
+                        md:-top-22 md:-right-32
+                    "
+                >
                     <Stamp
                         opened={showSecret}
                         onClick={() => setShowSecret(!showSecret)}
                     />
-                </div>
+                </motion.div>
 
                 <AnimatePresence>
                     {showSecret && (

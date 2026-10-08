@@ -129,9 +129,9 @@ export default function Projects() {
                             flex
                             snap-x
                             snap-mandatory
-                            gap-15
+                            gap-8
                             overflow-x-auto
-                            px-6
+                            px-2
                             pb-6
                             [scrollbar-width:none]
                             [&::-webkit-scrollbar]:hidden
@@ -141,8 +141,7 @@ export default function Projects() {
                             <article
                                 key={project.id}
                                 className="
-                                    w-[82vw]
-                                    max-w-[420px]
+                                    w-full
                                     shrink-0
                                     snap-start
                                 "
