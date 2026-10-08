@@ -12,7 +12,8 @@ export default function Stamp({ opened, onClick }: StampProps) {
             src={StampImage}
             alt="Unicorn Stamp"
             className="
-                w-[190px]
+                w-[125px]
+                md:w-[190px]
                 cursor-pointer
                 select-none
                 drop-shadow-lg

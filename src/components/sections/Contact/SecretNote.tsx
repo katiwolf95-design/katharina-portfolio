@@ -28,7 +28,8 @@ export default function SecretNote() {
                 md:-top-2
                 right-2
                 z-0
-                w-[280px]
+                w-[260px]
+                md:w-[280px]
                 rounded-xl
                 border
                 border-(--border)
@@ -37,7 +38,7 @@ export default function SecretNote() {
                 shadow-(--shadow-soft)
             "
         >
-            <div className="space-y-5 text-center">
+            <div className="space-y-4 md:space-y-5 text-center">
 
                 <p className="text-3xl">
                     🦄
@@ -47,15 +48,15 @@ export default function SecretNote() {
                     Du hast das Einhorn gefunden!
                 </p>
 
-                <p className="leading-7 text-(--text-light)">
+                <p className="text-base leading-6 text-(--text-light)">
                     Neugier ist meistens der Anfang
-                    <br />
+                    
                     von etwas Schönem.
                 </p>
 
-                <p className="leading-7 text-(--text-light)">
+                <p className="text-base leading-6 text-(--text-light)">
                     Wenn wir einmal zusammenarbeiten,
-                    <br />
+                    
                     erwähne einfach das Wort
                 </p>
 
@@ -70,7 +71,7 @@ export default function SecretNote() {
                     EINHORN
                 </p>
 
-                <p className="leading-7 text-(--text-light)">
+                <p className="text-base leading-6 text-(--text-light)">
                     Dann wartet eine kleine 
                     <br />
                     Überraschung auf dich.

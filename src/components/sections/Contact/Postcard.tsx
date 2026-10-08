@@ -83,7 +83,7 @@ export default function Postcard() {
                     src={Blob}
                     alt="Coffe-Image"
                     className="
-                        w-[230px] -translate-x-12 translate-y-6 
+                        w-[230px] -translate-x-10 translate-y-6 
                         md:w-[340px] md:translate-x-0 md:translate-y-0 mb-8
                     "
                 />
@@ -101,7 +101,7 @@ export default function Postcard() {
             {/* Nachricht */}
             <div className="
                 relative flex
-                ml-10 md:ml-12
+                ml-8 md:ml-12
                 mt-7 md:mt-0
                 w-full md:w-[300px]
                 h-auto md:h-[360px]
