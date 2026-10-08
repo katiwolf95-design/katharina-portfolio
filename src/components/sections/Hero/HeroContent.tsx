@@ -5,7 +5,7 @@ import { fadeUp, greeting, staggerContainer } from "../../../data/hero.animation
 export default function HeroContent() {
   return (
     <motion.div 
-        className="mx-auto max-w-md md:max-w-[420px] lg:mx-0 max-w-[500px]"
+        className="mx-auto md:max-w-[420px] lg:mx-0 max-w-[500px]"
         variants={staggerContainer}
         initial="hidden"
         animate="show"

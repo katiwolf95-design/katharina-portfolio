@@ -1,15 +1,15 @@
 :root {
-  --hero-kicker: clamp(0.6rem, 0.7rem + 0.3vw, 0.8rem);
-  --hero-greeting: clamp(3rem, 7vw, 6rem);
-  --hero-title: clamp(1.6rem, 2vw, 1.9rem);
+  --hero-kicker: clamp(0.65rem, 0.7rem + 0.3vw, 0.8rem);
+  --hero-greeting: clamp(3.2rem, 7vw, 6rem);
+  --hero-title: clamp(1.7rem, 2vw, 1.9rem);
   --hero-subtitle: clamp(1.3rem, 1.8vw, 1.6rem);
 
-  --section-title: clamp(2.5rem, 4.5vw, 5rem);
+  --section-title: clamp(2.6rem, 4.5vw, 5rem);
 
-  --project-quote: clamp(1rem, 1.4vw, 1.2rem);
-  --project-tags: clamp(.95rem, 1vw, 1.05rem);
+  --project-quote: clamp(1.05rem, 1.4vw, 1.2rem);
+  --project-tags: clamp(1rem, 1vw, 1.05rem);
 
-  --body: clamp(1rem, 1.2vw, 1.15rem);
+  --body: clamp(1.05rem, 1.2vw, 1.15rem);
   --small: 0.9rem;
 
   --font-heading: "Playfair Display", serif;
