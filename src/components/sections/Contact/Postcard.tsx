@@ -112,7 +112,9 @@ export default function Postcard() {
                 <motion.div
                     animate={
                         stampHint
-                            ?{ rotate: [-3, 3, -2, 2, 0, 0, 0, -3, 3, -2, 2, 0], }
+                            ?{ rotate: [-3, 3, -2, 2, 0, 0, 0, -3, 3, -2, 2, 0],
+                                scale: [1, 1.03, 1, 1, 1.03, 1],
+                             }
                             : { rotate: 0 }
                     }
                     transition={{ duration: 1.5, ease: "easeInOut",}}
