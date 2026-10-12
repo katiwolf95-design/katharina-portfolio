@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import SecretNote from "./SecretNote";
 import { AnimatePresence, motion } from "motion/react";
 import { getLanguageFromPath } from "../../../i18n/language";
-import { translations } from "../../../i18n/translations";
+// import { translations } from "../../../i18n/translations";
 
 export default function Postcard() {
     const language = getLanguageFromPath(window.location.pathname);

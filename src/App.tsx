@@ -12,7 +12,6 @@ import "./styles/globals.css";
 
 import {
   detectBrowserLanguage,
-  getLanguageFromPath,
 } from "./i18n/language";
 
 function App() {
@@ -47,7 +46,7 @@ function App() {
 
   // Sprachpräfix aus dem Pfad entfernen, damit das Routing
   // weiterhin mit den bisherigen Pfaden arbeiten kann.
-  const language = getLanguageFromPath(path);
+  // const language = getLanguageFromPath(path);
 
   const routePath = path.replace(/^\/(de|en)(?=\/|$)/, "") || "/";
 

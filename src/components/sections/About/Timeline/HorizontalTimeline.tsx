@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import TimelineItem from "./TimelineItem";
 import { getLanguageFromPath } from "../../../../i18n/language";
-import { translations } from "../../../../i18n/translations";
+// import { translations } from "../../../../i18n/translations";
 
 type TimelineEvent = {
     year?: string;
