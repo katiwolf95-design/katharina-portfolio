@@ -4,12 +4,13 @@ import ProjectViewer from "./ProjectViewer";
 import ProjectNavigation from "./ProjectNavigation";
 import { AnimatePresence } from "motion/react";
 import Button from "../../ui/Button";
-
+import { getLanguageFromPath } from "../../../i18n/language";
 
 import { projects } from "../../../data/projects";
 
 export default function Projects() {
     const [currentProject, setCurrentProject] = useState(0);
+    const language = getLanguageFromPath(window.location.pathname);
 
     /* const sectionRef = useRef(null);
 
@@ -191,7 +192,7 @@ export default function Projects() {
                                         text-(--text-secondary)
                                     "
                                 >
-                                    "{project.subtitle}"
+                                    {project.subtitle[language]}
                                 </blockquote>
 
                                 {/* Tags */}
@@ -213,10 +214,10 @@ export default function Projects() {
                                     "
                                     onClick={() => {
                                         window.location.href =
-                                            `/projects/${project.slug}`;
+                                            `/${language}/projects/${project.slug}`;
                                     }}
                                 >
-                                    → {project.button}
+                                    → {project.button[language]}
                                 </Button>
 
                             </article>

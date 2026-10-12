@@ -1,4 +1,8 @@
+import { getLanguageFromPath } from "../../i18n/language";
+
 export default function Footer() {
+    const language = getLanguageFromPath(window.location.pathname);
+
     return (
         <footer className="border-t border-(--border) bg-(--surface)">
             <div className="mx-auto w-ful max-w-300 px-8 py-16 lg:px-2">
@@ -12,16 +16,16 @@ export default function Footer() {
                         </p>
 
                         <p className="text-(--text-light)">
-                            Digital Product Designerin
+                            {language === "de" ? "Digital Product Designerin" : "Digital Product Designer"}
                             <br />
-                            & Fullstack-entwicklerin
+                            {language === "de" ? "& Fullstack-Entwicklerin" : "& Fullstack Developer"}
                         </p>
                     </div>
 
                     {/** Navigation */}
                     <nav>
                         <p className="mb-5 text-xs uppercase tracking-[0.3em] text-(--text-muted)">
-                            Navigation
+                            {language === "de" ? "Navigation" : "Navigation"}
                         </p>
 
                         <ul className="space-y-3">
@@ -29,7 +33,7 @@ export default function Footer() {
                                 <a
                                     href="#home"
                                     className="transition-opacity hover:opacity-50">
-                                        Home
+                                        {language === "de" ? "Startseite" : "Home"}
                                     </a>
                             </li>
 
@@ -37,7 +41,7 @@ export default function Footer() {
                                 <a
                                     href="#projects"
                                     className="transition-opacity hover:opacity-50">
-                                        Projects
+                                        {language === "de" ? "Projekte" : "Projects"}
                                     </a>
                             </li>
 
@@ -45,7 +49,7 @@ export default function Footer() {
                                 <a
                                     href="#about"
                                     className="transition-opacity hover:opacity-50">
-                                        About
+                                        {language === "de" ? "Über mich" : "About"}
                                     </a>
                             </li>
 
@@ -53,7 +57,7 @@ export default function Footer() {
                                 <a
                                     href="#contact"
                                     className="transition-opacity hover:opacity-50">
-                                        Contact
+                                        {language === "de" ? "Kontakt" : "Contact"}
                                     </a>
                             </li>
                         </ul>
@@ -62,7 +66,7 @@ export default function Footer() {
                     {/** Contact */}
                     <div>
                         <p className="mb-5 text-xs uppercase tracking-[0.3em] text-(--text-muted)">
-                            Let's talk
+                            {language === "de" ? "Kontakt" : "Let's talk"}
                         </p>
 
                         <a
@@ -74,7 +78,7 @@ export default function Footer() {
                                 hover:opacity-50
                             "
                         >
-                            Schreib mir →
+                            {language === "de" ? "Schreib mir →" : "Get in touch →"}
                         </a>
 
                         <a 

@@ -1,12 +1,15 @@
 import Button from "../../ui/Button";
 import { motion } from "motion/react";
 import type { Project } from "../../../data/projects";
+import { getLanguageFromPath } from "../../../i18n/language";
 
 export default function ProjectViewer({ 
     project, 
 }: {
     project: Project;
 }) {
+    
+    const language = getLanguageFromPath(window.location.pathname);
 
     if (project.layout === "left") {
         return (
@@ -59,7 +62,7 @@ export default function ProjectViewer({
                         animate={{ opacity: 1, y: 0, }}
                         transition={{ delay: 0.2, duration: 0.5, }}
                     >
-                        "{project.subtitle}"
+                        "{project.subtitle[language]}"
                     </motion.blockquote>
 
                     {/* Tags */}
@@ -74,10 +77,10 @@ export default function ProjectViewer({
                         variant="filled" 
                         className="mt-[clamp(3rem,6vw,6rem)] ml-[38px]"
                         onClick={() => {
-                            window.location.href = `/projects/${project.slug}`;
+                            window.location.href = `/${language}/projects/${project.slug}`;
                         }}
                     >
-                        → {project.button}
+                        → {project.button[language]}
                     </Button>
 
                 </div>
@@ -125,7 +128,7 @@ export default function ProjectViewer({
                                 animate={{ opacity: 1, y: 0, }}
                                 transition={{ delay: 0.2, duration: 0.5, }}
                             >
-                                "{project.subtitle}"
+                                "{project.subtitle[language]}"
                             </motion.blockquote>
 
                             {/* Tags */}
@@ -142,10 +145,10 @@ export default function ProjectViewer({
                                 variant="filled" 
                                 className="mt-24"
                                 onClick={() => {
-                                    window.location.href = `/projects/${project.slug}`;
+                                    window.location.href = `/${language}/projects/${project.slug}`;
                                 }}
                             >
-                                → {project.button}
+                                → {project.button[language]}
                             </Button>
                         </div>
                     </div>
@@ -219,7 +222,7 @@ export default function ProjectViewer({
                         animate={{ opacity: 1, y: 0, }}
                         transition={{ delay: 0.2, duration: 0.5, }}
                     >
-                        "{project.subtitle}"
+                        "{project.subtitle[language]}"
                     </motion.blockquote>
 
                     {/* Tags */}
@@ -238,10 +241,10 @@ export default function ProjectViewer({
                         variant="filled" 
                         className="mt-16"
                         onClick={() => {
-                            window.location.href = `/projects/${project.slug}`;
+                            window.location.href = `/${language}/projects/${project.slug}`;
                         }}
                     >
-                        → {project.button}
+                        → {project.button[language]}
                     </Button>
 
                 </div>

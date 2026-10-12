@@ -1,7 +1,12 @@
 import { projects } from "../../data/projects";
 import redesign from "../../assets/images/case-studies/randolph/randolph-redesign.png";
+import { getLanguageFromPath } from "../../i18n/language";
+import { translations } from "../../i18n/translations";
 
 export default function Randolph() {
+    const language = getLanguageFromPath(window.location.pathname);
+    const t = translations[language].randolph;
+
     const projectIndex = projects.findIndex(
         (item) => item.slug === "randolph"
     );
@@ -26,9 +31,7 @@ export default function Randolph() {
                     </h1>
 
                     <p className="body-text mb-10 max-w-3xl text-(--text-light)">
-                        Redesign und digitale Neupositionierung der Website des Künstlers Randolph – 
-                        mit Fokus auf eine klare Präsentation seiner Arbeiten, Ausstellungen und 
-                        künstlerischen Identität.
+                        {t.description}
                     </p>
 
                     {/* <div className="mt-16">
@@ -88,13 +91,11 @@ export default function Randolph() {
                     </p>
 
                     <h2 className="max-w-5xl font-(--font-heading) text-4xl leading-tight text-(--text-primary) md:text-6xl">
-                        Eine künstlerische Identität digital klar und eigenständig präsentieren.
+                        {t.challenge}
                     </h2>
 
                     <p className="body-text mt-10 max-w-3xl text-(--text-light)">
-                        Die bestehende Website sollte neu strukturiert und visuell weiterentwickelt
-                        werden, um Arbeiten, Ausstellungen und Informationen über den Künstler
-                        übersichtlicher und stärker aus der visuellen Identität heraus zu präsentieren.
+                        {t.challengeText}
                     </p>
                 </div>
             </section>
@@ -110,23 +111,23 @@ export default function Randolph() {
                         {[
                             {
                                 number: "01",
-                                title: "Analyse",
-                                text: "Bestehende Inhalte, Seitenstruktur und visuelle Identität analysieren.",
+                                title: language === "de" ? "Analyse" : "Analysis",
+                                text: t.approach.analysis,
                             },
                             {
                                 number: "02",
-                                title: "Struktur",
-                                text: "Inhalte und Navigation neu ordnen und eine klarere Nutzerführung entwickeln.",
+                                title: language === "de" ? "Struktur" : "Structure",
+                                text: t.approach.structure,
                             },
                             {
                                 number: "03",
                                 title: "Visual Design",
-                                text: "Eine visuelle Sprache entwickeln, die die Kunstwerke und die Persönlichkeit des Künstlers unterstützt.",
+                                text: t.approach.visualDesign,
                             },
                             {
                                 number: "04",
                                 title: "Development",
-                                text: "Das Redesign als responsive Website mit React, Tailwind und Strapi umsetzen.",
+                                text: t.approach.development,
                             },
                         ].map((step) => (
                             <div key={step.number}>
@@ -186,13 +187,11 @@ export default function Randolph() {
 
                         <div>
                             <h2 className="mb-8 font-(--font-heading) text-4xl leading-tight text-(--text-primary) md:text-6xl">
-                                Eine digitale Bühne für die Kunst.
+                                {t.solutionTitle}
                             </h2>
 
                             <p className="body-text max-w-3xl text-(--text-light)">
-                                Das Redesign verbindet eine reduzierte Informationsarchitektur mit einer visuellen 
-                                Gestaltung, die den Arbeiten Raum gibt und gleichzeitig einen klaren Zugang zu 
-                                Ausstellungen, Künstlerprofil und weiteren Inhalten schafft.
+                                {t.solutionText}
                             </p>
                         </div>
                     </div>
@@ -207,12 +206,11 @@ export default function Randolph() {
                     </p>
 
                     <h2 className="max-w-5xl font-(--font-heading) text-4xl leading-tight text-(--text-primary) md:text-6xl">
-                        Ein ausgearbeitetes Website-Redesign als visuelles und technisches Konzept.
+                        {t.outcomeTitle}
                     </h2>
 
                     <p className="body-text mt-10 max-w-3xl text-(--text-light)">
-                        Das Projekt zeigt, wie eine bestehende Künstler-Website strukturell, visuell und 
-                        technisch neu gedacht und als responsive Webanwendung umgesetzt werden kann.
+                        {t.outcomeText}
                     </p>
                 </div>
             </section>
@@ -222,14 +220,14 @@ export default function Randolph() {
                 <div className="page-container flex w-full flex-col gap-8 py-16 md:py-24">
 
                     <a
-                        href={`/projects/${previousProject.slug}`}
+                        href={`/${language}/projects/${previousProject.slug}`}
                         className="text-(--text-light) transition-opacity hover:opacity-60"
                     >
                         ← {previousProject.title}
                     </a>
 
                     <a
-                        href={`/projects/${nextProject.slug}`}
+                        href={`/${language}/projects/${nextProject.slug}`}
                         className="self-start text-(--text-primary) transition-opacity hover:opacity-60"
                     >
                         Next project: {nextProject.title} →

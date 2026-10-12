@@ -1,7 +1,9 @@
 import { motion } from "motion/react";
-
+import { getLanguageFromPath } from "../../../i18n/language";
 
 export default function SecretNote() {
+    const language = getLanguageFromPath(window.location.pathname);
+
     return (
         <motion.div
             initial={{
@@ -45,19 +47,41 @@ export default function SecretNote() {
                 </p>
 
                 <p className="font-medium leading-7">
-                    Du hast das Einhorn gefunden!
+                    {language === "de"
+                        ? "Du hast das Einhorn gefunden!"
+                        : "You found the unicorn!"}
                 </p>
 
                 <p className="text-base leading-6 text-(--text-light)">
-                    Neugier ist meistens der Anfang
-                    
-                    von etwas Schönem.
+                    {language === "de" ? (
+                        <>
+                            Neugier ist meistens der Anfang
+                            
+                            von etwas Schönem.
+                        </>
+                    ) : (
+                        <>
+                            Curiosity is often the beginning
+                            
+                            of something beautiful.
+                        </>
+                    )}
                 </p>
 
                 <p className="text-base leading-6 text-(--text-light)">
-                    Wenn wir einmal zusammenarbeiten,
-                    
-                    erwähne einfach das Wort
+                    {language === "de" ? (
+                        <>
+                            Wenn wir einmal zusammenarbeiten,
+                            
+                            erwähne einfach das Wort
+                        </>
+                    ) : (
+                        <>
+                            If we ever work together,
+                            
+                            just mention the word
+                        </>
+                    )}
                 </p>
 
                 <p
@@ -68,13 +92,23 @@ export default function SecretNote() {
                         text-(--primary)
                     "
                 >
-                    EINHORN
+                    {language === "de" ? "EINHORN" : "UNICORN"}
                 </p>
 
                 <p className="text-base leading-6 text-(--text-light)">
-                    Dann wartet eine kleine 
-                    <br />
-                    Überraschung auf dich.
+                    {language === "de" ? (
+                        <>
+                            Dann wartet eine kleine
+                            
+                            Überraschung auf dich.
+                        </>
+                    ) : (
+                        <>
+                            A little surprise
+                            
+                            will be waiting for you.
+                        </>
+                    )}
                 </p>
 
                 <p className="leading-7 text-(--text-light) font-(family-name:--font-heading) italic">

@@ -6,10 +6,10 @@ export type Project = {
     id: string;
     slug: string;
     title: string;
-    subtitle: string;
+    subtitle: Record<"de" | "en", string>;
     tags: string[];
     image: string;
-    button: string;
+    button: Record<"de" | "en", string>;
     layout: "left" | "center" | "right";
 };
 
@@ -18,30 +18,48 @@ export const projects: Project[] = [
     id: "01",
     slug: "freelancer-crm",
     title: "Freelancer CRM",
-    subtitle: "Ein CRM, das Freelancer unterstützt, statt sie zu überfordern.",
+    subtitle: {
+      de: "Ein CRM, das Freelancer unterstützt, statt sie zu überfordern.",
+      en: "A CRM that supports freelancers instead of overwhelming them.",
+    },
     tags: ["Product Design", "Fullstack", "SaaS"],
     image: crmImage,
-    button: "Case Study ansehen",
+    button: {
+      de: "Case Study ansehen",
+      en: "View case study",
+    },
     layout: "left",
   },
   {
     id: "02",
     slug: "digital-home",
     title: "Digital Home",
-    subtitle: "Mein Portfolio wurde zum Produkt.",
+    subtitle: {
+      de: "Mein Portfolio wurde zum Produkt.",
+      en: "My portfolio became a product.",
+    },
     tags: ["UX", "Branding", "Storytelling"],
     image: "",
-    button: "Mehr erfahren",
+    button: {
+      de: "Mehr erfahren",
+      en: "Learn more",
+    },
     layout: "center",
   },
   {
     id: "03",
     slug: "randolph",
     title: "Randolph",
-    subtitle: "Redesign einer Marke, die wieder Vertrauen schaffen sollte.",
+    subtitle: {
+      de: "Redesign einer Marke, die wieder Vertrauen schaffen sollte.",
+      en: "A brand redesign focused on rebuilding trust.",
+    },
     tags: ["Editorial", "Visual Design", "UI Design"],
     image: randolphImage,
-    button: "Case Study ansehen",
+    button: {
+      de: "Case Study ansehen",
+      en: "View case study",
+    },
     layout: "right",
   }
 ];

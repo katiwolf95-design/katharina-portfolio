@@ -1,8 +1,12 @@
 import { projects } from "../../data/projects";
 import portfolio from "../../assets/images//case-studies/digital-home/digital-home-mockup.png";
-
+import { getLanguageFromPath } from "../../i18n/language";
+import { translations } from "../../i18n/translations";
 
 export default function DigitalHome() {
+    const language = getLanguageFromPath(window.location.pathname);
+    const t = translations[language].digitalHome;
+
     const projectIndex = projects.findIndex(
         (item) => item.slug === "digital-home"
     );
@@ -19,7 +23,7 @@ export default function DigitalHome() {
             <section className="relative">
                 <div className="mx-auto w-full max-w-300 px-6 py-24 md:px-15 md:py-32">
                     <p className="mb-6 text-sm uppercase tracking-[0.3em] text-(--text-muted)">
-                        Konzept · UX/UI · Interface Design
+                        Concept · UX/UI · Interface Design
                     </p>
 
                     <h1 className="section-title mb-8 max-w-5xl text-(--text-primary)">
@@ -27,8 +31,7 @@ export default function DigitalHome() {
                     </h1>
 
                     <p className="body-text mb-10 max-w-3xl text-(--text-light)">
-                        Ein persönliches digitales Portfolio, das nicht nur Projekte präsentiert, 
-                        sondern selbst zum digitalen Produkt wird.
+                        {t.description}
                     </p>
 
                     <div className="mt-16">
@@ -84,8 +87,7 @@ export default function DigitalHome() {
                     </p>
 
                     <h2 className="max-w-5xl font-(--font-heading) text-4xl leading-tight text-(--text-primary) md:text-6xl">
-                        Wie kann ein Portfolio mehr sein als eine Sammlung von Projekten – 
-                        und selbst zu einem eigenständigen digitalen Produkt werden?
+                        {t.challenge}
                     </h2>
                 </div>
             </section>
@@ -102,17 +104,17 @@ export default function DigitalHome() {
                             {
                                 number: "01",
                                 title: "Concept",
-                                text: "Die Idee entwickeln, das persönliche Portfolio selbst als digitales Produkt zu denken.",
+                                text: t.approach.concept,
                             },
                             {
                                 number: "02",
                                 title: "Structure",
-                                text: "Inhalte, Projekte und persönliche Informationen in eine klare Nutzerführung bringen.",
+                                text: t.approach.structure,
                             },
                             {
                                 number: "03",
                                 title: "Interface",
-                                text: "Eine visuelle und responsive Oberfläche entwickeln, die Persönlichkeit und digitale Kompetenz verbindet.",
+                                text: t.approach.interface,
                             },
                             
                         ].map((step) => (
@@ -144,12 +146,11 @@ export default function DigitalHome() {
 
                         <div>
                             <h2 className="mb-8 font-(--font-heading) text-4xl leading-tight text-(--text-primary) md:text-6xl">
-                                Ein Portfolio, das selbst zum digitalen Produkt wird.
+                                {t.solutionTitle}
                             </h2>
 
                             <p className="body-text mt-10 max-w-3xl text-(--text-light)">
-                                Digital Home verbindet persönliche Positionierung, Projektpräsentation und responsive 
-                                Interface-Gestaltung zu einem eigenständigen digitalen Portfolio-Konzept.
+                                {t.solutionText}
                             </p>
                         </div>
                     </div>
@@ -164,12 +165,11 @@ export default function DigitalHome() {
                     </p>
 
                     <h2 className="max-w-5xl font-(--font-heading) text-4xl leading-tight text-(--text-primary) md:text-6xl">
-                        Ein eigenständiges, responsives Portfolio-Konzept.
+                        {t.outcomeTitle}
                     </h2>
 
                     <p className="body-text mt-10 max-w-3xl text-(--text-light)">
-                        Ein eigenständiges, responsives Portfolio-Konzept – entwickelt aus der Idee, 
-                        das Portfolio selbst als digitales Produkt zu denken.
+                        {t.outcomeText}
                     </p>
                 </div>
             </section>
@@ -179,14 +179,14 @@ export default function DigitalHome() {
                 <div className="page-container flex w-full flex-col gap-8 py-16 md:py-24">
 
                     <a
-                        href={`/projects/${previousProject.slug}`}
+                        href={`/${language}/projects/${previousProject.slug}`}
                         className="text-(--text-light) transition-opacity hover:opacity-60"
                     >
                         ← {previousProject.title}
                     </a>
 
                     <a
-                        href={`/projects/${nextProject.slug}`}
+                        href={`/${language}/projects/${nextProject.slug}`}
                         className="self-start text-(--text-primary) transition-opacity hover:opacity-60"
                     >
                         Next project: {nextProject.title} →

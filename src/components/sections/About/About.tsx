@@ -8,8 +8,13 @@ import {
     storyContainer,
     buttonAnimation, 
 } from "../../../data/about.animations";
+import { getLanguageFromPath } from "../../../i18n/language";
+import { translations } from "../../../i18n/translations";
 
 export default function About() {
+    const language = getLanguageFromPath(window.location.pathname);
+    const t = translations[language].about;
+
     return (
         <motion.section 
             id="about"
@@ -42,11 +47,12 @@ export default function About() {
                                 leading-tight tracking-[-0.02em]
                             "
                         >
-                            Ich wollte irgendwann
+                            {t.headlineStart}
                             <br />
-
-                            nicht mehr{" "}
-                            <span className="text-(--primary)">nur gestalten.</span>
+                            {t.headlineEnd}{" "}
+                            <span className="text-(--primary)">
+                                {t.headlineHighlight}
+                            </span>
                         </motion.h2>
 
                         {/* highlight */}
@@ -57,7 +63,7 @@ export default function About() {
                                 text-(--primary)
                             "
                         >
-                            Ich wollte verstehen.
+                            {t.highlight}
                         </motion.h3>
                     </header>
 
@@ -83,21 +89,15 @@ export default function About() {
                             "
                         >
                             <motion.p variants={fadeUp}>
-                                Früher habe ich digitale Produkte gestaltet.
-                                Irgendwann wollte ich wissen,
-                                warum manche Produkte funktionieren
-                                und andere nicht.
+                                {t.story1}
                             </motion.p>
 
                             <motion.p variants={fadeUp}>
-                                Deshalb bin ich den Weg
-                                in die Entwicklung gegangen.
+                                {t.story2}
                             </motion.p>
 
                             <motion.p variants={fadeUp}>
-                                Heute entwickle ich digitale Produkte,
-                                die Design, Strategie und Entwicklung
-                                zu einem Ganzen verbinden.
+                                {t.story3}
                             </motion.p>
 
                         </motion.div>
@@ -110,7 +110,7 @@ export default function About() {
                     >
                         <a href="/about">
                             <Button variant="outline">
-                                Mehr über meinen Weg →
+                                {t.cta}
                             </Button>
                         </a>
                     </motion.div>

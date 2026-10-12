@@ -7,9 +7,14 @@ import projectsPreview from "../../assets/images/case-studies/solinea-crm/crm-pr
 import projectsEdit from "../../assets/images/case-studies/solinea-crm/projects-edit.png";
 import customerDetail from "../../assets/images/case-studies/solinea-crm/customer-detail.png";
 import customers from "../../assets/images/case-studies/solinea-crm/customers.png";
+import { getLanguageFromPath } from "../../i18n/language";
+import { translations } from "../../i18n/translations";
 
 
 export default function SolineaCRM() {
+    const language = getLanguageFromPath(window.location.pathname);
+    const t = translations[language].crm;
+
     const projectIndex = projects.findIndex(
         (item) => item.slug === "freelancer-crm"
     );
@@ -34,8 +39,7 @@ export default function SolineaCRM() {
                     </h1>
 
                     <p className="body-text mb-10 max-w-3xl text-(--text-light)">
-                        Ein CRM für Freelancer, das Kinden, Projekte und Anfragen
-                        zusammenführt – klar, fokusiert und ohne unnötige Komplexität.
+                        {t.description}
                     </p>
 
                     <ul className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-(--text-secondary)">
@@ -102,14 +106,11 @@ export default function SolineaCRM() {
                     </p>
 
                     <h2 className="max-w-5xl font-(--font-heading) text-4xl leading-tight text-(--text-primary) md:text-6xl">
-                        Freelancer brauchen Struktur – aber kein weiteres kompliziertes
-                        System.
+                        {t.challenge}
                     </h2>
 
                     <p className="body-text mt-10 max-w-3xl text-(--text-light)">
-                        Solinea CRM entstand aus der Idee, ein digitales Werkzeug zu
-                        entwickeln, das die wichtigsten Bereiche der täglichen
-                        Freelancer-Arbeit an einem Ort bündelt.
+                        {t.challengeText}
                     </p>
                 </div>
             </section>
@@ -126,22 +127,22 @@ export default function SolineaCRM() {
                             {
                                 number: "01",
                                 title: "Problem",
-                                text: "Die Anforderungen und Herausforderungen eines Freelance-Workflows verstehen.",
+                                text: t.approach.problem,
                             },
                             {
                                 number: "02",
                                 title: "Structure",
-                                text: "Informationen, Funktionen und Nutzerwege in eine klare Struktur bringen.",
+                                text: t.approach.structure,
                             },
                             {
                                 number: "03",
                                 title: "Interface",
-                                text: "Eine reduzierte und verständliche Oberfläche entwickeln.",
+                                text: t.approach.interface,
                             },
                             {
                                 number: "04",
                                 title: "Implementation",
-                                text: "Das Produkt als funktionierenden Fullstack-MVP umsetzen.",
+                                text: t.approach.implementation,
                             },
                         ].map((step) => (
                             <div key={step.number}>
@@ -167,16 +168,15 @@ export default function SolineaCRM() {
                 <div className="mx-auto w-full max-w-300 px-6 py-24 md:px-15 md:py-32">
                     <div className="mb-12">
                         <p className="text-sm uppercase tracking-[0.2em] text-(--primary) mb-3">
-                            Ausgewählte Ansichten
+                            {t.selectedWork}
                         </p>
 
                         <h2 className="max-w-5xl font-(--font-heading) text-4xl leading-tight text-(--text-primary) md:text-6xl">
-                            Die wichtigsten Bereiche des CRM im Überblick.
+                            {t.selectedWorkTitle}
                         </h2>
 
                         <p className="mt-4 text-lg text-gray-600">
-                            Von der zentralen Dashboard-Ansicht über Anfragen und Projekte
-                            bis zur Kundenverwaltung.
+                            {t.selectedWorkText}
                         </p>
                     </div>
 
@@ -187,7 +187,7 @@ export default function SolineaCRM() {
                                 01 — Dashboard
                             </h3>
                             <p className="mt-2 text-gray-600">
-                                Eine zentrale Übersicht über Kunden, Projekte, Anfragen und  Umsatz.
+                                {t.dashboard}
                             </p>
                         </div>
 
@@ -205,7 +205,7 @@ export default function SolineaCRM() {
                                 02 — Inquiries Management
                             </h3>
                             <p className="mt-2 text-gray-600">
-                                Eingehende Anfragen lassen sich nach Status, Budget und Projektart verwalten.
+                                {t.inquiries}
                             </p>
                         </div>
 
@@ -231,7 +231,7 @@ export default function SolineaCRM() {
                                 03 — Projects Management
                             </h3>
                             <p className="mt-2 text-gray-600">
-                                Projekte sind nach Status, Fortschritt, Budget und Frist organisiert.
+                                {t.projects}
                             </p>
                         </div>
 
@@ -257,7 +257,7 @@ export default function SolineaCRM() {
                                 04 — Customers Management
                             </h3>
                             <p className="mt-2 text-gray-600">
-                                Kundendaten, Projekte, Umsatz und Notizen sind an einem Ort zusammengefasst.
+                                {t.customers}
                             </p>
                         </div>
 
@@ -288,13 +288,11 @@ export default function SolineaCRM() {
 
                         <div>
                             <h2 className="mb-8 font-(--font-heading) text-4xl leading-tight text-(--text-primary) md:text-6xl">
-                                Vom Konzept zum funktionierenden Produkt.
+                                {t.solutionTitle}
                             </h2>
 
                             <p className="body-text max-w-3xl text-(--text-light)">
-                                Solinea CRM verbindet eine klar strukturierte Benutzeroberfläche
-                                mit einer eigenen technischen Umsetzung. Kunden, Projekte und
-                                Anfragen bilden dabei die zentralen Bereiche des Produkts.
+                                {t.solutionText}
                             </p>
                         </div>
                     </div>
@@ -309,14 +307,11 @@ export default function SolineaCRM() {
                     </p>
 
                     <h2 className="max-w-5xl font-(--font-heading) text-4xl leading-tight text-(--text-primary) md:text-6xl">
-                        Ein funktionierender Fullstack-MVP als Grundlage für ein
-                        zukünftiges SaaS-Produkt.
+                        {t.outcomeTitle}
                     </h2>
 
                     <p className="body-text mt-10 max-w-3xl text-(--text-light)">
-                        Das Projekt verbindet Product Design, UX und technische Umsetzung –
-                        von der Struktur und Benutzerführung bis zur Implementierung der
-                        Anwendung.
+                        {t.outcomeText}
                     </p>
                 </div>
             </section>
@@ -329,14 +324,14 @@ export default function SolineaCRM() {
                         href={`/projects/${previousProject.slug}`}
                         className="text-(--text-light) transition-opacity hover:opacity-60"
                     >
-                        ← {previousProject.title}
+                        ← {t.previousProject}: {previousProject.title}
                     </a>
 
                     <a
                         href={`/projects/${nextProject.slug}`}
                         className="self-start text-(--text-primary) transition-opacity hover:opacity-60"
                     >
-                        Next project: {nextProject.title} →
+                        {t.nextProject}: {nextProject.title} →
                     </a>
 
                 </div>

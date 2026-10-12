@@ -2,6 +2,7 @@ import { projects } from "../../data/projects";
 import DigitalHome from "./DigitalHome";
 import Randolph from "./Randolph";
 import SolineaCRM from "./SolineaCRM";
+import { getLanguageFromPath } from "../../i18n/language";
 
 type CaseStudyProps = {
   slug: string;
@@ -10,6 +11,7 @@ type CaseStudyProps = {
 export default function CaseStudy({ slug }: CaseStudyProps) {
   const projectIndex = projects.findIndex((item) => item.slug === slug);
   const project = projects[projectIndex];
+  const language = getLanguageFromPath(window.location.pathname);
 
   if (!project) {
     return (
@@ -55,7 +57,7 @@ export default function CaseStudy({ slug }: CaseStudyProps) {
                 </h1>
 
                 <p className="body-text mb-10 max-w-2xl text-(--text-light)">
-                    {project.subtitle}
+                    {project.subtitle[language]}
                 </p>
 
                 <ul className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-(--text-secondary)">

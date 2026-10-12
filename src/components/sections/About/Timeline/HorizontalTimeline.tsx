@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import TimelineItem from "./TimelineItem";
+import { getLanguageFromPath } from "../../../../i18n/language";
+import { translations } from "../../../../i18n/translations";
 
 type TimelineEvent = {
     year?: string;
@@ -10,6 +12,8 @@ type TimelineEvent = {
 };
 
 function HorizontalTimeline() {
+    const language = getLanguageFromPath(window.location.pathname);
+
     const DOT_SIZE = 20;
     const lineRef = useRef<HTMLDivElement | null>(null);
 
@@ -19,30 +23,38 @@ function HorizontalTimeline() {
     const events: TimelineEvent[] = [
         {
             year: "2011",
-            title: "Design & Communication",
-            text: "Visual foundations, design thinking and clear communication.",
+            title: language === "de" ? "Design & Kommunikation" : "Design & Communication",
+            text: language === "de"
+                ? "Visuelle Grundlagen, Design Thinking und klare Kommunikation."
+                : "Visual foundations, design thinking and clear communication.",
             position: 0.08,
         },
         {
             year: "2021",
-            title: "Marketing & Impact",
-            text: "Strategic thinking, reach and brand logic.",
+            title: language === "de" ? "Marketing & Wirkung" : "Marketing & Impact",
+            text: language === "de"
+                ? "Strategisches Denken, Reichweite und Markenlogik."
+                : "Strategic thinking, reach and brand logic.",
             position: 0.3,
         },
         {
             year: "2023",
-            title: "Human Behavior & Psychology",
-            text: "Understanding motivation, relationships and inner processes.",
+            title: language === "de" ? "Menschliches Verhalten & Psychologie" : "Human Behavior & Psychology",
+            text: language === "de"
+                ? "Motivation, Beziehungen und innere Prozesse verstehen."
+                : "Understanding motivation, relationships and inner processes.",
             position: 0.53,
         },
         {
             year: "2026",
-            title: "Systems & Execution",
-            text: "Technical implementation with a focus on structure and sustainability.",
+            title: language === "de" ? "Systeme & Umsetzung" : "Systems & Execution",
+            text: language === "de"
+                ? "Technische Umsetzung mit Fokus auf Struktur und Nachhaltigkeit."
+                : "Technical implementation with a focus on structure and sustainability.",
             position: 0.75,
         },
         {
-            title: "to be continued...",
+            title: language === "de" ? "Fortsetzung folgt ..." : "To be continued...",
             text: "",
             position: 0.96,
             isFuture: true,
@@ -93,7 +105,7 @@ function HorizontalTimeline() {
     return (
         <section className="hidden md:block max-w-[1200px] mx-auto px-6 py-20">
             <h2 className="text-2xl font-semibold text-gray-900 mb-24 text-center">
-                Experience
+                {language === "de" ? "Werdegang" : "Experience"}
             </h2>
 
             <div className="relative w-full">

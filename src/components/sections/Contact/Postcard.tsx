@@ -4,8 +4,11 @@ import Blob from "../../../assets/images/blob-image.png"
 import { useEffect, useRef, useState } from "react";
 import SecretNote from "./SecretNote";
 import { AnimatePresence, motion } from "motion/react";
+import { getLanguageFromPath } from "../../../i18n/language";
+import { translations } from "../../../i18n/translations";
 
 export default function Postcard() {
+    const language = getLanguageFromPath(window.location.pathname);
 
     const [showSecret, setShowSecret] = useState(false);
     const [stampHint, setStampHint] = useState(false);
@@ -81,7 +84,7 @@ export default function Postcard() {
             <div className="flex w-full pb-8 md:pb-0 md:w-[420px] justify-center">
                 <img
                     src={Blob}
-                    alt="Coffe-Image"
+                    alt={language === "de" ? "Kaffeeillustration" : "Coffee illustration"}
                     className="
                         w-[230px] -translate-x-8 translate-y-6 
                         md:w-[340px] md:translate-x-0 md:translate-y-0 mb-8
@@ -140,17 +143,28 @@ export default function Postcard() {
                 </AnimatePresence>
 
                 <h3 className="mb-8 mt-6 font-(--font-heading) text-4xl">
-                    Danke,
+                    {language === "de" ? "Danke," : "Thank you,"}
                 </h3>
 
                 <div className="space-y-4">
                     <p>
-                        dass du dir Zeit genommen hast, mein Portfolio anzusehen.
+                        {language === "de"
+                            ? "dass du dir Zeit genommen hast, mein Portfolio anzusehen."
+                            : "for taking the time to explore my portfolio."}
                     </p>
 
                     <p>
-                        Ich hoffe, aus diesem Besuch <br />
-                        ist eine kleine Begegnung geworden.
+                        {language === "de" ? (
+                            <>
+                                Ich hoffe, aus diesem Besuch <br />
+                                ist eine kleine Begegnung geworden.
+                            </>
+                        ) : (
+                            <>
+                                I hope this visit <br />
+                                has turned into a small connection.
+                            </>
+                        )}
                     </p>
                 </div>
 
@@ -161,7 +175,7 @@ export default function Postcard() {
                             variant="filled"
                             className="w-full md:w-auto "
                         >
-                            Schreib mir →
+                            {language === "de" ? "Schreib mir →" : "Get in touch →"}
                         </Button>
                     </a>
                 </div>

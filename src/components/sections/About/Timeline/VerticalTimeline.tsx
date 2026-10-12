@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { getLanguageFromPath } from "../../../../i18n/language";
 
 type TimelineItemData = {
     date: string;
@@ -7,28 +8,38 @@ type TimelineItemData = {
 };
 
 function VerticalTimeline() {
+    const language = getLanguageFromPath(window.location.pathname);
+
     const [visibleItems, setVisibleItems] = useState<number[]>([]);
 
     const items: TimelineItemData[] = [
         {
             date: "2011",
-            title: "Design & Communication",
-            text: "Visual foundations, design thinking and clear communication.",
+            title: language === "de" ? "Design & Kommunikation" : "Design & Communication",
+            text: language === "de"
+                ? "Visuelle Grundlagen, Design Thinking und klare Kommunikation."
+                : "Visual foundations, design thinking and clear communication.",
         },
         {
             date: "2021",
-            title: "Marketing & Impact",
-            text: "Strategic thinking, reach and brand logic.",
+            title: language === "de" ? "Marketing & Wirkung" : "Marketing & Impact",
+            text: language === "de"
+                ? "Strategisches Denken, Reichweite und Markenlogik."
+                : "Strategic thinking, reach and brand logic.",
         },
         {
             date: "2023",
-            title: "Human Behavior & Psychology",
-            text: "Understanding motivation, relationships and inner processes.",
+            title: language === "de" ? "Menschliches Verhalten & Psychologie" : "Human Behavior & Psychology",
+            text: language === "de"
+                ? "Motivation, Beziehungen und innere Prozesse verstehen."
+                : "Understanding motivation, relationships and inner processes.",
         },
         {
             date: "2026",
-            title: "Systems & Execution",
-            text: "Technical implementation with a focus on structure and sustainability.",
+            title: language === "de" ? "Systeme & Umsetzung" : "Systems & Execution",
+            text: language === "de"
+                ? "Technische Umsetzung mit Fokus auf Struktur und Nachhaltigkeit."
+                : "Technical implementation with a focus on structure and sustainability.",
         },
     ];
 
@@ -58,7 +69,7 @@ function VerticalTimeline() {
     return (
         <section className="md:hidden max-w-xl mx-auto px-6 py-10">
             <h2 className="text-2xl font-semibold mb-20">
-                Werdegang
+                {language === "de" ? "Werdegang" : "Experience"}
             </h2>
 
             <div className="relative">
