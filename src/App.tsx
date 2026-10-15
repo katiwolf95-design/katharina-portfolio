@@ -7,7 +7,7 @@ import Postcard from "./components/sections/Contact/Postcard";
 import Footer from "./components/layout/Footer";
 import CaseStudy from "./pages/CaseStudy/CaseStudy";
 import About from "./pages/About";
-
+import MoreWork from "./components/sections/Projects/MoreWorks";
 import "./styles/globals.css";
 
 import {
@@ -80,6 +80,7 @@ function App() {
       <Navbar />
       <Hero />
       <Projects />
+      <MoreWork />
       <AboutSection />
       <Postcard />
       <Footer />
